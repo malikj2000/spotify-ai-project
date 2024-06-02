@@ -1,14 +1,16 @@
 import './App.css';
-import UserList from './components/UserList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CreatePlaylist from './components/CreatePlaylist';
+import Login from './components/Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>My Fullstack App</h1>
-        <UserList />
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/create-playlist" element={<CreatePlaylist />} />
+      </Routes>
+    </Router>
   );
 }
 
