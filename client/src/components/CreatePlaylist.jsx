@@ -11,6 +11,7 @@ const CreatePlaylist = () => {
         try {
             const data = await createPlaylist(prompt, accessToken);
             setResult(data);
+            setPrompt('');
         } catch (error) {
             setResult('Error creating playlist.');
         }
@@ -24,13 +25,17 @@ const CreatePlaylist = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input
+                <textarea
                     type="text"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder="What kind of playlist do you want to make?"
+                    rows="4"
+                    cols="50"
                 />
+                <br></br>
                 <button type="submit">Create Playlist</button>
+                <br></br>
             </form>
             {result && <div dangerouslySetInnerHTML={{ __html: result }} />}
         </div>
