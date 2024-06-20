@@ -5,6 +5,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import playlistRoutes from './routes/playlistRoutes.js';
 import authRoutes from './routes/authRoutes.js'
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 
