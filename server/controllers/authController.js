@@ -22,7 +22,7 @@ export const callback = async (req, res) => {
             spotifyApi.setAccessToken(accessTokenRefreshed);
         }, expires_in/2 * 1000)
 
-        res.redirect(`http://localhost:5173/create-playlist?access_token=${access_token}`);
+        res.redirect(`https://spotify-ai-playlist-creator-f5deeb7f0c59.herokuapp.com/create-playlist?access_token=${access_token}`);
     } catch (error) {
         console.error('Error getting tokens: ', error);
         res.send('Error getting tokens.');
